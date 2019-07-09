@@ -1,22 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Hero } from 'src/app/model/hero';
+import { HeroesService } from 'src/app/services/heroes.service';
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit, OnDestroy {
 
   newHero = new Hero();
 
-  heroes = [new Hero('Spiderman', 'Spidy'),
-  new Hero('Superman', 'man of steel'),
-  new Hero('Batman', 'Dark Knight')];
+  heroes: Hero[] = [];
 
-  constructor() { }
+  constructor(public service: HeroesService) { }
 
   ngOnInit() {
+    console.log('OnInit: heroes');
+  }
+  ngOnDestroy(): void {
+    console.log('OnDestroy: heroes');
   }
 
   addHero(hero) {
