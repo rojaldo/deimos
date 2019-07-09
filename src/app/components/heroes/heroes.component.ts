@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Hero } from 'src/app/model/hero';
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -6,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  newHero = { name: '', description: '' };
+  newHero = new Hero();
 
-  heroes = [{ name: 'Spiderman', description: 'Spidy' },
-  { name: 'Superman', description: 'man of steel' },
-  { name: 'Batman', description: 'Dark Knight' }];
+  heroes = [new Hero('Spiderman', 'Spidy'),
+  new Hero('Superman', 'man of steel'),
+  new Hero('Batman', 'Dark Knight')];
 
   constructor() { }
 
@@ -19,7 +21,7 @@ export class HeroesComponent implements OnInit {
 
   handleClick() {
     this.heroes.push(this.newHero);
-    this.newHero = { name: '', description: '' };
+    this.newHero = new Hero();
   }
 
 }
