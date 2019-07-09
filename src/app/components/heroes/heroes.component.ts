@@ -24,4 +24,7 @@ export class HeroesComponent implements OnInit {
     this.newHero = new Hero();
   }
 
+  removeHero(heroIndex: number) {
+    this.heroes.splice(heroIndex, 1);
+  }
 }
