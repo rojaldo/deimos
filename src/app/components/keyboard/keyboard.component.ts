@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { CalculatorService } from 'src/app/services/calculator.service';
 
 enum State { init, firstFigure, secondFigure, result }
 
@@ -7,7 +8,7 @@ enum State { init, firstFigure, secondFigure, result }
   templateUrl: './keyboard.component.html',
   styleUrls: ['./keyboard.component.scss']
 })
-export class KeyboardComponent implements OnInit {
+export class KeyboardComponent implements OnInit, OnDestroy {
 
   display = '';
   currentState = State.init;
@@ -18,10 +19,27 @@ export class KeyboardComponent implements OnInit {
 
   @Output() signal = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private service: CalculatorService) { }
 
   ngOnInit() {
+    this.display = this.service.calculator.display;
+    this.currentState = this.service.calculator.currentState;
+    this.firstFigure = this.service.calculator.firstFigure;
+    this.secondFigure = this.service.calculator.secondFigure;
+    this.result = this.service.calculator.result;
+    this.operator = this.service.calculator.operator;
   }
+
+  ngOnDestroy(): void {
+    this.service.calculator.display = this.display;
+    this.service.calculator.currentState = this.currentState;
+    this.service.calculator.firstFigure = this.firstFigure;
+    this.service.calculator.secondFigure = this.secondFigure;
+    this.service.calculator.result = this.result;
+    this.service.calculator.operator = this.operator;
+  }
+
+
   handleNumber(myNumber: number) {
     console.log('HandleNumber: ' + myNumber);
 
