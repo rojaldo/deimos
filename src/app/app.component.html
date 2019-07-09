@@ -1,2 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-calculator></app-calculator>
+
+<ngb-tabset type="tabs">
+    <ngb-tab title="Heroes">
+        <ng-template ngbTabContent>
+            <app-heroes></app-heroes>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Calculator">
+        <ng-template ngbTabContent>
+            <app-calculator></app-calculator>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>

@@ -7,13 +7,15 @@ import { DisplayComponent } from './components/display/display.component';
 import { KeyboardComponent } from './components/keyboard/keyboard.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HeroesComponent } from './components/heroes/heroes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculatorComponent,
     DisplayComponent,
-    KeyboardComponent
+    KeyboardComponent,
+    HeroesComponent
   ],
   imports: [
     BrowserModule, NgbModule
