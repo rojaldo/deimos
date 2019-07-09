@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -7,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeroesComponent implements OnInit {
 
-  heroName = '';
-  heroes = ['Spiderman', 'Superman', 'Batman'];
+  newHero = { name: '', description: '' };
+
+  heroes = [{ name: 'Spiderman', description: 'Spidy' },
+  { name: 'Superman', description: 'man of steel' },
+  { name: 'Batman', description: 'Dark Knight' }];
 
   constructor() { }
 
@@ -16,8 +18,8 @@ export class HeroesComponent implements OnInit {
   }
 
   handleClick() {
-    this.heroes.push(this.heroName);
-    this.heroName = '';
+    this.heroes.push(this.newHero);
+    this.newHero = { name: '', description: '' };
   }
 
 }
