@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { HeroesListComponent } from './components/heroes-list/heroes-list.component';
 import { HeroesFormComponent } from './components/heroes-form/heroes-form.component';
 import { HeroesService } from './services/heroes.service';
-
+import { BeersComponent } from './components/beers/beers.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +22,11 @@ import { HeroesService } from './services/heroes.service';
     KeyboardComponent,
     HeroesComponent,
     HeroesListComponent,
-    HeroesFormComponent
+    HeroesFormComponent,
+    BeersComponent
   ],
   imports: [
-    BrowserModule, NgbModule, FormsModule
+    BrowserModule, NgbModule, FormsModule, HttpClientModule
   ],
   providers: [HeroesService],
   bootstrap: [AppComponent]
