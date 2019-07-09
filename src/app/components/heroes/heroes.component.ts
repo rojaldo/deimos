@@ -19,12 +19,9 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleClick() {
-    this.heroes.push(this.newHero);
-    this.newHero = new Hero();
+  addHero(hero) {
+    this.heroes.push(hero);
   }
 
-  removeHero(heroIndex: number) {
-    this.heroes.splice(heroIndex, 1);
-  }
+
 }
