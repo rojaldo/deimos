@@ -13,13 +13,15 @@ export class HeroesComponent implements OnInit, OnDestroy {
 
   heroes: Hero[] = [];
 
-  constructor(public service: HeroesService) { }
+  constructor(private service: HeroesService) { }
 
   ngOnInit() {
     console.log('OnInit: heroes');
+    this.heroes = this.service.heroes;
   }
   ngOnDestroy(): void {
     console.log('OnDestroy: heroes');
+    this.service.heroes = this.heroes;
   }
 
   addHero(hero) {
