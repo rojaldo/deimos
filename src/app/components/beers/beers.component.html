@@ -1,3 +1,14 @@
-<p>
-  {{result | json}}
-</p>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let beer of result">
+      <b>{{beer.name}}</b>
+      <br>
+      {{beer.description}}
+    </li>
+  </ul>
+
+  <p>
+    {{result | json}}
+  </p>
+
+</div>
