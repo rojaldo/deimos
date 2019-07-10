@@ -1,11 +1,19 @@
 <div class="container">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let beer of result">
-      <b>{{beer.name}}</b>
-      <br>
-      {{beer.description}}
-    </li>
-  </ul>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of result">
+      <div class="card mt-3">
+        <div class="card-body">
+          <h4 class="card-title">{{beer.name}}</h4>
+          <div class="container-fluid text-center">
+            <img width="70px" [src]="beer.image_url" alt="">            
+          </div>
+          <p class="card-text">{{beer.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <p>
     {{result | json}}
