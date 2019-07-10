@@ -1,19 +1,19 @@
 <div class="container">
-
+    <ng5-slider [(value)]="lowValue" [(highValue)]="highValue" [options]="options" (userChange)="handleChange()"></ng5-slider>
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of result">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of beers">
       <div class="card mt-3">
         <div class="card-body">
           <h4 class="card-title">{{beer.name}}</h4>
           <div class="container-fluid text-center">
             <img width="70px" [src]="beer.image_url" alt="">            
           </div>
+          <p>{{beer.abv}}</p>
           <p class="card-text">{{beer.description}}</p>
         </div>
       </div>
     </div>
   </div>
-
 
   <p>
     {{result | json}}
