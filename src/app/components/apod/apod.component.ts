@@ -10,6 +10,7 @@ export class ApodComponent implements OnInit {
 
   result: any;
   responded = false;
+  date: any;
 
   constructor(private service: RequestService) { }
 
@@ -22,6 +23,14 @@ export class ApodComponent implements OnInit {
   processData(data: any) {
     this.result = data;
     this.responded = true;
+  }
+
+  handleSelect() {
+    const apiKey = 'DEMO_KEY';
+    const url = 'https://api.nasa.gov/planetary/apod?api_key='
+      + apiKey +
+      '&date=' + this.date.year + '-' + this.date.month + '-' + this.date.day;
+    this.service.getRequest(url).subscribe((data) => this.processData(data));
   }
 
 }
