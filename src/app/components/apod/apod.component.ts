@@ -9,10 +9,15 @@ import { RequestService } from 'src/app/services/request.service';
 export class ApodComponent implements OnInit {
 
   date: any;
+  dates: any[] = new Array<any>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleSelect() {
+    this.dates.push(this.date);
   }
 
 }

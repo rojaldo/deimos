@@ -15,13 +15,13 @@ export class ShowApodComponent implements OnInit, OnChanges {
   constructor(private service: RequestService) { }
 
   ngOnInit() {
-    const apiKey = 'DEMO_KEY';
+    const apiKey = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
     const url = 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey + '&date=2019-07-09';
     this.service.getRequest(url).subscribe((data) => this.processData(data));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    const apiKey = 'DEMO_KEY';
+    const apiKey = 'tqz634Z1x0LiJzjbhSyUoExrZaGKLM0MG1VnROR6';
     const url = 'https://api.nasa.gov/planetary/apod?api_key='
       + apiKey +
       '&date=' + this.date.year + '-' + this.date.month + '-' + this.date.day;
