@@ -39,12 +39,7 @@ export class BeersComponent implements OnInit {
   }
 
   handleChange() {
-    this.beers = [];
-    for (const beer of this.result) {
-      if (beer.abv >= this.lowValue && beer.abv <= this.highValue) {
-        this.beers.push(beer);
-      }
-    }
+    this.beers = this.result.filter((beer) => beer.abv >= this.lowValue && beer.abv <= this.highValue);
   }
 
 }
