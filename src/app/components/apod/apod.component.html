@@ -1,6 +1,12 @@
-<div class="container">
+<div class="container-fluid">
   <div class="container-fluid text-center p-3">
     <ngb-datepicker #dp [(ngModel)]="date" (select)="handleSelect()"></ngb-datepicker>
   </div>
-  <app-show-apod [date]="myDate" *ngFor="let myDate of dates"></app-show-apod>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" *ngFor="let myDate of dates">
+      <app-show-apod [date]="myDate"></app-show-apod>
+    </div>
+  </div>
+
 </div>

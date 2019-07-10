@@ -1,18 +1,16 @@
 <div class="alert alert-primary" role="alert" *ngIf="!responded">
     <strong>Loading...</strong>
   </div>
-  <div class="jumbotron" *ngIf="responded">
-    <h1 class="display-3">{{result.title}}</h1>
-    <p class="lead">{{result.date}}</p>
-    <hr class="my-2">
-    <div class="container-fluid text-center">
-      <img [src]="result.url" width="100%" alt="" *ngIf="result.media_type === 'image'">
-      <div class="alert alert-warning" role="alert" *ngIf="result.media_type === 'video'">
-        <strong>this is not an image, it's a video</strong>
-      </div>
+  <div class="card">
+    <img class="card-img-top" src="holder.js/100x180/" alt="">
+    <div class="card-body">
+      <h4 class="card-title">{{result.title}}</h4>
+      <div class="container-fluid text-center">
+          <img [src]="result.url" width="100%" alt="" *ngIf="result.media_type === 'image'">
+          <div class="alert alert-warning" role="alert" *ngIf="result.media_type === 'video'">
+            <strong>this is not an image, it's a video</strong>
+          </div>
+        </div>    
+      <p class="card-text">{{result.explanation}}</p>
     </div>
-    <p>{{result.explanation}}</p>
-    <p class="lead">
-      <a class="btn btn-primary" [href]="result.hdurl" role="button">Download image</a>
-    </p>
   </div>
