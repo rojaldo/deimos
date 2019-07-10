@@ -15,6 +15,7 @@ import { HeroesService } from './services/heroes.service';
 import { BeersComponent } from './components/beers/beers.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApodComponent } from './components/apod/apod.component';
+import { ShowApodComponent } from './components/show-apod/show-apod.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { ApodComponent } from './components/apod/apod.component';
     HeroesListComponent,
     HeroesFormComponent,
     BeersComponent,
-    ApodComponent
+    ApodComponent,
+    ShowApodComponent
   ],
   imports: [
     BrowserModule, NgbModule, FormsModule, HttpClientModule
