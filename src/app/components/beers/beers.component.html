@@ -4,11 +4,11 @@
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" *ngFor="let beer of beers">
       <div class="card mt-3">
         <div class="card-body">
-          <h4 class="card-title">{{beer.name}}</h4>
+          <h4 class="card-title">{{beer.name | uppercase}}</h4>
           <div class="container-fluid text-center">
             <img width="70px" [src]="beer.image_url" alt="">            
           </div>
-          <p>{{beer.abv}}</p>
+          <p>{{beer.abv | alcohol}}</p>
           <p class="card-text">{{beer.description}}</p>
         </div>
       </div>

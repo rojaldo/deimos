@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApodComponent } from './components/apod/apod.component';
 import { ShowApodComponent } from './components/show-apod/show-apod.component';
 import { Ng5SliderModule } from 'ng5-slider';
+import { AlcoholPipe } from './pipes/alcohol.pipe';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { Ng5SliderModule } from 'ng5-slider';
     HeroesFormComponent,
     BeersComponent,
     ApodComponent,
-    ShowApodComponent
+    ShowApodComponent,
+    AlcoholPipe
   ],
   imports: [
     BrowserModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule
