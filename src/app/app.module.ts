@@ -19,6 +19,7 @@ import { ShowApodComponent } from './components/show-apod/show-apod.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AlcoholPipe } from './pipes/alcohol.pipe';
 import { FormComponent } from './components/form/form.component';
+import { CountriesComponent } from './components/countries/countries.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +34,13 @@ import { FormComponent } from './components/form/form.component';
     ApodComponent,
     ShowApodComponent,
     AlcoholPipe,
-    FormComponent
+    FormComponent,
+    CountriesComponent
   ],
   imports: [
     BrowserModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule
   ],
+  exports: [],
   providers: [HeroesService],
   bootstrap: [AppComponent]
 })
