@@ -18,6 +18,7 @@ import { ApodComponent } from './components/apod/apod.component';
 import { ShowApodComponent } from './components/show-apod/show-apod.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { AlcoholPipe } from './pipes/alcohol.pipe';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AlcoholPipe } from './pipes/alcohol.pipe';
     BeersComponent,
     ApodComponent,
     ShowApodComponent,
-    AlcoholPipe
+    AlcoholPipe,
+    FormComponent
   ],
   imports: [
     BrowserModule, NgbModule, FormsModule, HttpClientModule, Ng5SliderModule
