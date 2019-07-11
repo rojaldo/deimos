@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from 'src/app/services/request.service';
 import { Options } from 'ng5-slider';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-beers',
@@ -19,10 +20,12 @@ export class BeersComponent implements OnInit {
     ceil: 100,
     step: 0.5
   };
+  altResult: Observable<any>;
 
   constructor(private service: RequestService) { }
 
   ngOnInit() {
+    this.altResult = this.service.getRequest();
     this.service.getRequest().subscribe(
       (data) => this.processResult(data),
       (error) => this.processError(error)
