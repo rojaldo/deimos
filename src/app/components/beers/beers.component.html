@@ -8,7 +8,7 @@
           <div class="container-fluid text-center">
             <img width="70px" [src]="beer.image_url" alt="">            
           </div>
-          <p>{{beer.abv | alcohol}}</p>
+          <p>{{beer.abv | alcohol : ','}}</p>
           <p class="card-text">{{beer.description}}</p>
         </div>
       </div>
